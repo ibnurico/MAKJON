@@ -1,0 +1,551 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFF2C2;
+    color: #333;
+    scroll-behavior: smooth; /* Menambahkan animasi scroll */
+}
+
+/* Navbar */
+nav {
+    background-color: #D91656;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Animasi saat hover */
+}
+
+nav ul li a:hover {
+    background-color: #fff;
+    color: #D91656;
+}
+
+/* Menambahkan margin top pada body agar konten tidak terhalang navbar yang fixed */
+body {
+    padding-top: 80px; /* Sesuaikan dengan tinggi navbar */
+}
+
+.hero-section {
+    background-image: url('https://dzglkev4c34xb.cloudfront.net/horego.com/denpasar-selatan/restaurant/makjon-pelopor-martabak-jepang-denpasar-bar/ambience/af1qipmlla6ziqdifahkrlwa7wr8unt2f4nkgmdxzaxj.jpg'); /* Gambar Hero */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative; /* Untuk mengatur posisi overlay */
+}
+
+/* Overlay hitam semi-transparan */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Hitam dengan transparansi 40% */
+    z-index: 1; /* Menempatkan overlay di atas gambar, tapi di bawah teks dan logo */
+}
+
+.hero-logo {
+    width: 120px; /* Ukuran logo */
+    height: 120px;
+    border-radius: 50%; /* Membuat logo berbentuk lingkaran */
+    object-fit: cover; /* Agar gambar tetap proporsional dalam lingkaran */
+    margin-bottom: 20px; /* Jarak antara logo dan judul */
+    z-index: 2; /* Menempatkan logo di atas overlay */
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin: 0;
+    font-weight: bold; /* Membuat teks menjadi tebal */
+    z-index: 2; /* Menempatkan teks di atas overlay */
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    font-weight: bold; /* Membuat teks menjadi tebal */
+    z-index: 2; /* Menempatkan teks di atas overlay */
+}
+
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Container yang mengatur layout */
+.about-container {
+    display: flex; /* Menggunakan flexbox */
+    justify-content: center; /* Mengatur agar teks dan gambar berada di tengah secara horizontal */
+    align-items: center; /* Menyusun elemen secara vertikal */
+    gap: 20px; /* Jarak antar kolom */
+    flex-wrap: wrap; /* Menumpuk elemen pada layar kecil */
+}
+
+/* Container untuk teks */
+.about-text {
+    width: 500px; /* Lebar teks 500px */
+    height: 500px; /* Tinggi teks 500px */
+    display: flex; /* Flexbox untuk teks */
+    justify-content: center; /* Menyusun teks agar berada di tengah secara horizontal */
+    align-items: center; /* Menyusun teks agar berada di tengah secara vertikal */
+    background-color: #FFF2C2; /* Latar belakang teks agar terlihat */
+    border-radius: 10px; /* Sudut teks sedikit melengkung */
+    padding: 20px; /* Padding di dalam teks */
+    text-align: justify; /* Membuat teks rata panjang */
+}
+
+.about-text p {
+    font-size: 15pt; /* Ukuran font agar pas dalam kotak */
+    line-height: 1.4;
+    color: #333;
+    text-align: justify; /* Agar teks berada di tengah */
+}
+
+/* Container untuk gambar */
+.about-image {
+    width: 500px; /* Lebar gambar 500px */
+    height: 500px; /* Tinggi gambar 500px */
+    display: flex;
+    justify-content: center; /* Menyusun gambar agar berada di tengah secara horizontal */
+    align-items: center; /* Menyusun gambar agar berada di tengah secara vertikal */
+}
+
+.about-image img {
+    width: 100%; /* Mengatur lebar gambar 100% dari kontainer */
+    height: 100%; /* Mengatur tinggi gambar 100% dari kontainer */
+    object-fit: cover; /* Menjaga agar gambar tetap proporsional dan terpotong sesuai dengan ukuran kontainer */
+    border-radius: 10px; /* Sudut gambar sedikit melengkung */
+}
+
+/* Responsiveness untuk layar kecil */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Menumpuk elemen secara vertikal */
+        text-align: center;
+    }
+
+    .about-text, .about-image {
+        width: 80%; /* Ukuran 80% pada layar kecil */
+        height: auto; /* Menyesuaikan tinggi agar tidak terlalu besar */
+    }
+}
+
+#menu {
+    padding: 40px 20px;
+    text-align: left;
+    background-color: #FFF2C2;
+}
+
+#menu h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+    text-transform: none;
+    letter-spacing: 1px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.menu-item img:hover {
+    transform: scale(1.1);
+}
+
+.menu-content {
+    flex: 1;
+}
+
+.menu-content h3 {
+    font-size: 20px;
+    margin: 0 0 10px;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu-item:hover .menu-content h3 {
+    color: #ff6347;
+    /* Change to a vibrant color on hover */
+}
+
+.menu-content p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 14px;
+}
+
+.menu-content strong {
+    font-size: 18px;
+    color: #000;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    #menu h2 {
+        font-size: 24px;
+    }
+
+    .menu-item {
+        padding: 15px;
+    }
+
+    .menu-item img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Available Section */
+#available {
+    background: #FFF2C2;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+#available h2 {
+    margin-bottom: 25px;
+    color: #333;
+    font-weight: 600;
+}
+
+#available p {
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.apps {
+    display: flex;
+    justify-content: center;
+    /* Menyusun gambar di tengah */
+    gap: 60px;
+    /* Memberi jarak antar gambar */
+    margin-top: 30px;
+    flex-wrap: wrap;
+    /* Menyusun elemen-elemen jika ruang tidak cukup */
+}
+
+.app {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    width: 150px;
+    height: 200px;
+    /* Tentukan lebar untuk setiap elemen */
+}
+
+.app:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+}
+
+.app-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.app p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .apps {
+        justify-content: space-between;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .apps {
+        justify-content: center;
+        gap: 15px;
+        /* Menyesuaikan jarak antar gambar pada layar lebih kecil */
+    }
+
+    .app {
+        width: 180px;
+        /* Mengurangi lebar setiap elemen */
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #available h2 {
+        font-size: 2rem;
+    }
+
+    #available p {
+        font-size: 1rem;
+    }
+
+    .app p {
+        font-size: 1rem;
+    }
+
+    .app-logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .apps {
+        flex-direction: column;
+        /* Mengubah tata letak menjadi vertikal di layar sangat kecil */
+        align-items: center;
+        /* Menyelaraskan elemen-elemen ke tengah */
+    }
+
+    .app {
+        width: 90%;
+        /* Mengubah lebar menjadi 90% untuk responsif */
+        margin-bottom: 20px;
+    }
+}
+
+.testimonials {
+    background-color: #f7f7f7; /* Background bagian testimonial lebih terang */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.testimonial-container {
+    display: flex;
+    flex-direction: column; /* Susun testimonial secara vertikal */
+    gap: 30px; /* Jarak antar testimonial */
+    align-items: center; /* Posisi testimonial di tengah */
+}
+
+.testimonial {
+    display: flex; /* Menggunakan flexbox untuk menyusun elemen dalam testimonial */
+    flex-direction: column;
+    align-items: center; /* Menempatkan semua elemen di tengah */
+    justify-content: center;
+    width: 80%;
+    max-width: 600px; /* Membatasi lebar maksimal */
+    background-color: #fff; /* Background putih untuk setiap testimonial */
+    padding: 20px;
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan lembut di belakang */
+    transition: all 0.3s ease-in-out; /* Efek transisi saat hover */
+}
+
+.testimonial:hover {
+    transform: translateY(-5px); /* Efek naik sedikit saat hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Bayangan lebih gelap saat hover */
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Membuat gambar avatar menjadi bulat */
+    margin-right: 15px;
+}
+
+.testimonial-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Menempatkan nama dan bintang di kiri */
+}
+
+.testimonial-name {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.testimonial-stars {
+    color: #FFD700; /* Warna bintang menjadi emas */
+    font-size: 1.2em;
+    margin-top: -20px;
+}
+
+.testimonial-text {
+    font-size: 1em;
+    color: #555;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Responsiveness untuk layar kecil */
+@media (max-width: 768px) {
+    .testimonial-container {
+        align-items: stretch; /* Membuat testimonial lebih lebar pada layar kecil */
+    }
+
+    .testimonial {
+        width: 95%; /* Menggunakan hampir seluruh lebar layar */
+    }
+}
+
+.contact {
+    background-color: #D91656; /* Background merah muda */
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.contact p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    font-weight: 300;
+    line-height: 1.6;
+    justify-content: center;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Jarak antar item kontak */
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center; /* Menjaga ikon dan teks sejajar vertikal */
+    justify-content: center; /* Menjaga ikon dan teks sejajar horizontal */
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Lebar kontainer kontak */
+    height: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px); /* Efek sedikit terangkat saat hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Shadow lebih gelap saat hover */
+}
+
+.contact-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px; /* Jarak antara ikon dan teks */
+}
+
+.contact-text {
+    display: inline-flex; /* Gunakan inline-flex untuk teks berada sejajar dengan ikon */
+    align-items: center; /* Menjaga teks dan ikon sejajar secara vertikal */
+    justify-content: center; /* Menjaga teks di tengah kontainer */
+    margin-top: 35px;
+}
+
+.contact-text a {
+    font-size: 14pt; /* Ukuran font sedikit lebih besar agar lebih terbaca */
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-text a:hover {
+    color: #D91656; /* Warna merah saat hover */
+}
+
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column; /* Susun secara vertikal pada layar kecil */
+        align-items: center;
+    }
+
+    .contact-item {
+        width: 80%; /* Lebar kontainer kontak di perangkat kecil */
+        margin-bottom: 20px; /* Jarak antar item kontak */
+    }
+}
+
+
+
+
+footer {
+    background-color: #D91656;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
