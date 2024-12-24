@@ -56,13 +56,13 @@ body {
     background-position: center;
     color: white;
     text-align: center;
-    margin-top: -20px
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     position: relative; /* Untuk mengatur posisi overlay */
+    margin-top: -20px;
 }
 
 /* Overlay hitam semi-transparan */
@@ -540,9 +540,6 @@ body {
         margin-bottom: 20px; /* Jarak antar item kontak */
     }
 }
-
-
-
 
 footer {
     background-color: #D91656;
